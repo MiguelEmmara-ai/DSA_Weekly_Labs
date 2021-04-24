@@ -12,6 +12,7 @@ AUT Data Structures and Algorithms Weekly Labs Semester 1 2021
    - [Exercise 2.1](https://github.com/MiguelEmmara-ai/DSA_Weekly_Labs/tree/master/src/Exercise2_1)
    - [Exercise 2.2](https://github.com/MiguelEmmara-ai/DSA_Weekly_Labs/tree/master/src/Exercise2_2)
    - [Exercise 3.1](https://github.com/MiguelEmmara-ai/DSA_Weekly_Labs/tree/master/src/Exercise3_1)
+   - [Exercise 3.2](https://github.com/MiguelEmmara-ai/DSA_Weekly_Labs/tree/master/src/Exercise3_2)
     
 
 # License
