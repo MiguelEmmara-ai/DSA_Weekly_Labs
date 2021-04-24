@@ -18,5 +18,4 @@ AUT Data Structures and Algorithms Weekly Labs Semester 1 2021
 # License
 
 Copyright 2021. Code released under the MIT license.
-
 Written With IntelliJ IDEA IDE (JDK 8)
