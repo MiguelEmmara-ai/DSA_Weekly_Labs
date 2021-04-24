@@ -3,7 +3,7 @@ package Exercise3_2;
 /**
  * Created by Miguel Emmara
  */
-public class ArrayStack<E> implements QueueADT <E>{
+public class ArrayQueue<E> implements QueueADT <E>{
     private static final int INIT_SIZE = 0;
     private int front;
     private int rear;
@@ -11,7 +11,7 @@ public class ArrayStack<E> implements QueueADT <E>{
     private E[] array;
 
     @SuppressWarnings("unchecked")
-    public ArrayStack() {
+    public ArrayQueue() {
         this.front = 0;
         this.rear = 0;
         this.size = 0;
@@ -89,13 +89,13 @@ public class ArrayStack<E> implements QueueADT <E>{
     }
 
     public static void main(String[] args) {
-        ArrayStack <Integer> arrayStack = new ArrayStack <> ();
-        arrayStack.enqueue(1);
-        arrayStack.enqueue(2);
-        arrayStack.enqueue(3);
-        arrayStack.enqueue(4);
-        arrayStack.enqueue(5);
+        ArrayQueue<Integer> arrayQueue = new ArrayQueue<>();
+        arrayQueue.enqueue(1);
+        arrayQueue.enqueue(2);
+        arrayQueue.enqueue(3);
+        arrayQueue.enqueue(4);
+        arrayQueue.enqueue(5);
 
-        System.out.println(arrayStack);
+        System.out.println(arrayQueue);
     }
 }
