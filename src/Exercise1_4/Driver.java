@@ -3,7 +3,7 @@ package Exercise1_4;
 /**
  * <h1>Driver</h1>
  *
- * @author  Miguel Emmara - 18022146
+ * @author Miguel Emmara - 18022146
  */
 public class Driver {
     static RandomObtainableArrayList<Integer> randomObtainableArrayList;
@@ -24,6 +24,6 @@ public class Driver {
     }
 
     public RandomObtainableArrayList getList() {
-        return this.getRandomObtainableArrayList();
+        return getRandomObtainableArrayList();
     }
 }

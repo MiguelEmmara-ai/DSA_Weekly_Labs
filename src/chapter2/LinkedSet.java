@@ -1,18 +1,28 @@
-package Exercise2_2;
+package chapter2;
+
+/**
+ * A class that implements a set collection using a
+ * singly-linked list as the underlying data structure
+ *
+ * @author Andrew Ensor
+ */
 
 import java.util.AbstractSet;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/**
- * <h1>Linked Set</h1>
- *
- * @author Miguel Emmara - 18022146
- */
 public class LinkedSet<E> extends AbstractSet<E> {
     protected int numElements;
     protected Node<E> firstNode;
+
+    // default constructor that creates a new set
+    // that is initially empty
+    public LinkedSet() {
+        super();
+        numElements = 0;
+        firstNode = null;
+    }
 
     // constructor for creating a new set which
     // initially holds the elements in the collection c
@@ -23,31 +33,11 @@ public class LinkedSet<E> extends AbstractSet<E> {
         }
     }
 
-    // default constructor that creates a new set
-    // that is initially empty
-    public LinkedSet() {
-        numElements = 0;
-        firstNode = null;
-    }
-
-    // returns an iterator for iterating through the elements in the set
-    @Override
-    public Iterator<E> iterator() {
-        return new LinkedIterator<E>(firstNode);
-    }
-
-    // returns the number of elements in the set
-    @Override
-    public int size() {
-        return numElements;
-    }
-
     // adds the element to the set provided that it
     // is not already in the set, and returns
     // true if the set did not already contain the element
-    @Override
     public boolean add(E o) {
-        if (!contains(o)) {
+        if (!(contains(o))) {
             Node<E> newNode = new Node<E>(o);
             // add the new node to the front of the list
             newNode.next = firstNode;
@@ -60,11 +50,11 @@ public class LinkedSet<E> extends AbstractSet<E> {
 
     // remove the element from the set and returns true if the
     // element was in the set
-    @Override
     public boolean remove(Object o) {  // search for the node of the element o in the set
         boolean found = false;
         if (firstNode != null) {  // check if the element is first in list
-            if (firstNode.element == null && o == null || firstNode.element != null && firstNode.element.equals(o)) {
+            if ((firstNode.element == null && o == null) ||
+                    (firstNode.element != null && firstNode.element.equals(o))) {
                 found = true;
                 firstNode = firstNode.next;
                 numElements--;
@@ -72,7 +62,8 @@ public class LinkedSet<E> extends AbstractSet<E> {
                 Node<E> previous = firstNode;
                 Node<E> current = firstNode.next;
                 while (current != null && !found) {
-                    if (current.element == null && o == null || current.element != null && current.element.equals(o)) {
+                    if ((current.element == null && o == null) ||
+                            (current.element != null && current.element.equals(o))) {
                         found = true;
                         previous.next = current.next;
                         numElements--;
@@ -86,15 +77,24 @@ public class LinkedSet<E> extends AbstractSet<E> {
         return found;
     }
 
+    // returns an iterator for iterating through the elements in the set
+    public Iterator<E> iterator() {
+        return new LinkedIterator<E>(firstNode);
+    }
+
+    // returns the number of elements in the set
+    public int size() {
+        return numElements;
+    }
+
     // removes all elements from the set
-    @Override
     public void clear() {
         firstNode = null;
         numElements = 0;
     }
 
     // inner class which represents a node in a singly-linked list
-    protected static class Node<E> {
+    protected class Node<E> {
         public E element;
         public Node<E> next;
 
@@ -105,7 +105,7 @@ public class LinkedSet<E> extends AbstractSet<E> {
     }
 
     // inner class which represents an iterator for a singly-linked list
-    private static class LinkedIterator<E> implements Iterator<E> {
+    private class LinkedIterator<E> implements Iterator<E> {
         private Node<E> nextNode; // next node to use for the iterator
 
         // constructor which accepts a reference to first node in list
@@ -116,14 +116,12 @@ public class LinkedSet<E> extends AbstractSet<E> {
         }
 
         // returns whether there is still another element
-        @Override
         public boolean hasNext() {
-            return nextNode != null;
+            return (nextNode != null);
         }
 
         // returns the next element or throws a NoSuchElementException
         // it there are no further elements
-        @Override
         public E next() throws NoSuchElementException {
             if (!hasNext())
                 throw new NoSuchElementException();
@@ -133,7 +131,6 @@ public class LinkedSet<E> extends AbstractSet<E> {
         }
 
         // remove method not supported by this iterator
-        @Override
         public void remove() throws UnsupportedOperationException {
             throw new UnsupportedOperationException();
         }

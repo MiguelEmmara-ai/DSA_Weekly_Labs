@@ -1,12 +1,12 @@
-package Exercise3_1;
+package chapter3;
+
+/**
+ * An interface that defines the abstract data type
+ * for a stack collection of elements with type E
+ */
 
 import java.util.NoSuchElementException;
 
-/**
- * @author Andrew Ensor
- * <p>
- * Miguel Emmara - 18022146
- */
 public interface StackADT<E> {
     // adds one element to the top of this stack
     void push(E element);

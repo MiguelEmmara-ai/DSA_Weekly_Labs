@@ -3,7 +3,7 @@ package Exercise3_2;
 /**
  * Created by Miguel Emmara
  */
-public class ArrayQueue<E> implements QueueADT <E>{
+public class ArrayQueue<E> implements QueueADT<E> {
     private static final int INIT_SIZE = 0;
     private int front;
     private int rear;
@@ -18,12 +18,23 @@ public class ArrayQueue<E> implements QueueADT <E>{
         this.array = (E[]) new Object[INIT_SIZE];
     }
 
+    public static void main(String[] args) {
+        ArrayQueue<Integer> arrayQueue = new ArrayQueue<>();
+        arrayQueue.enqueue(1);
+        arrayQueue.enqueue(2);
+        arrayQueue.enqueue(3);
+        arrayQueue.enqueue(4);
+        arrayQueue.enqueue(5);
+
+        System.out.println(arrayQueue);
+    }
+
     // This function is used to insert an element into the circular queue. In a circular queue,
     // the new element is always inserted at Rear position.
     @Override
     public void enqueue(E element) {
         // Condition if queue is full.
-        if(size() == array.length) {
+        if (size() == array.length) {
             expandCapacity();
         }
         size++;
@@ -33,13 +44,13 @@ public class ArrayQueue<E> implements QueueADT <E>{
 
     @Override
     public E dequeue() {
-        if(front == -1) {
+        if (front == -1) {
             System.out.print("Queue is Empty");
             return null;
         }
         E result = array[front];
         array[front] = null;
-        front = (front+1) % array.length;
+        front = (front + 1) % array.length;
         size--;
 
         return result;
@@ -86,16 +97,5 @@ public class ArrayQueue<E> implements QueueADT <E>{
         }
         result.append("]");
         return result.toString();
-    }
-
-    public static void main(String[] args) {
-        ArrayQueue<Integer> arrayQueue = new ArrayQueue<>();
-        arrayQueue.enqueue(1);
-        arrayQueue.enqueue(2);
-        arrayQueue.enqueue(3);
-        arrayQueue.enqueue(4);
-        arrayQueue.enqueue(5);
-
-        System.out.println(arrayQueue);
     }
 }

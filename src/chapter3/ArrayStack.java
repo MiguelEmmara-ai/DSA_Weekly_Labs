@@ -1,11 +1,15 @@
-package Exercise3_1;
+package chapter3;
+
+/**
+ * A class that implements a stack collection using an
+ * array as the underlying data structure
+ *
+ * @author Andrew Ensor
+ */
 
 import java.util.Collection;
 import java.util.NoSuchElementException;
 
-/**
- * Created by Miguel Emmara - 18022146
- */
 public class ArrayStack<E> implements StackADT<E> {
     private final int INITIAL_CAPACITY = 20;
     protected int numElements;
@@ -13,7 +17,6 @@ public class ArrayStack<E> implements StackADT<E> {
 
     // default constructor that creates a new stack
     // that is initially empty
-    @SuppressWarnings("unchecked")
     public ArrayStack() {
         numElements = 0;
         elements = (E[]) (new Object[INITIAL_CAPACITY]); // unchecked
@@ -31,16 +34,13 @@ public class ArrayStack<E> implements StackADT<E> {
     public void push(E element) {
         if (numElements >= elements.length)
             expandCapacity();
-        shiftRight();
-        elements[0] = element;
-        numElements++;
+        elements[numElements++] = element;
     }
 
     // removes and returns the top element from this stack
     public E pop() throws NoSuchElementException {
         if (numElements > 0) {
-            E topElement = elements[0];
-            shiftLeft();
+            E topElement = elements[numElements - 1];
             elements[numElements - 1] = null;
             numElements--;
             return topElement;
@@ -68,30 +68,22 @@ public class ArrayStack<E> implements StackADT<E> {
 
     // returns a string representation of the stack from top to bottom
     public String toString() {
-        StringBuilder output = new StringBuilder("[");
+        String output = "[";
         for (int i = numElements - 1; i >= 0; i--) {
-            output.append(elements[i]);
+            output += elements[i];
             if (i > 0)
-                output.append(",");
+                output += ",";
         }
-        output.append("]");
-        return output.toString();
+        output += "]";
+        return output;
     }
 
-    // HELPER //
-    @SuppressWarnings("unchecked")
+    // helper method which doubles the current size of the array
     private void expandCapacity() {
-        E[] largerArray = (E[]) (new Object[elements.length * 2]); //unchecked
+        E[] largerArray = (E[]) (new Object[elements.length * 2]);//unchecked
         // copy the elements array to the largerArray
-        if (numElements >= 0) System.arraycopy(elements, 0, largerArray, 0, numElements);
+        for (int i = 0; i < numElements; i++)
+            largerArray[i] = elements[i];
         elements = largerArray;
-    }
-
-    private void shiftRight() {
-        if (numElements + 1 >= 0) System.arraycopy(elements, 0, elements, 1, numElements + 1);
-    }
-
-    private void shiftLeft() {
-        if (numElements - 1 >= 0) System.arraycopy(elements, 1, elements, 0, numElements - 1);
     }
 }

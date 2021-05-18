@@ -9,21 +9,20 @@ import java.util.concurrent.Executors;
 /**
  * <h1>Bouncing Balls</h1>
  *
- * @author  Miguel Emmara - 18022146
+ * @author Miguel Emmara - 18022146
  */
 public class BouncingBalls extends JPanel {
     public final int PANEL_WIDTH = 500;
     public final int PANEL_HEIGHT = 500;
-    private DrawingPanel drawPanel;
-    private Timer timer;
-    private ArrayList<Ball> balls;
-    private ArrayList<Thread> threads;
-
     public int counter;
     public JButton addBtn, add10Btn, add100Btn, rmvBtn, rmv10Btn, rmvAllBtn;
     public JButton pause1Btn, resumeBtn;
     public JPanel ballButtonsPanel;
-    private ExecutorService threadExecutor;
+    private final DrawingPanel drawPanel;
+    private Timer timer;
+    private final ArrayList<Ball> balls;
+    private final ArrayList<Thread> threads;
+    private final ExecutorService threadExecutor;
 
     public BouncingBalls() {
         super(new BorderLayout());
@@ -35,7 +34,7 @@ public class BouncingBalls extends JPanel {
         this.drawPanel = new DrawingPanel();
         this.add(drawPanel, BorderLayout.CENTER);
 
-        ballButtonsPanel = new JPanel(new GridLayout(3,3));
+        ballButtonsPanel = new JPanel(new GridLayout(3, 3));
         this.add(ballButtonsPanel, BorderLayout.SOUTH);
 
         addBtn = new JButton("Add a Ball");
@@ -100,6 +99,18 @@ public class BouncingBalls extends JPanel {
 
     }
 
+    public static void main(String[] args) {
+        BouncingBalls myPanel = new BouncingBalls();
+        JFrame frame = new JFrame("Exercise 1.3 (Bouncing Balls)");
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.getContentPane().add(myPanel);
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
+        frame.setVisible(true);
+    }
+
     private void exitApp() {
         System.exit(0);
     }
@@ -141,7 +152,7 @@ public class BouncingBalls extends JPanel {
             threads.removeAll(threads);
             balls.removeAll(balls);
             counter = 0;
-        } else  {
+        } else {
             if (counter == balls.size()) {
                 counter--;
             }
@@ -151,7 +162,7 @@ public class BouncingBalls extends JPanel {
                 balls.remove(counter--);
             }
 
-            if(counter < 0)
+            if (counter < 0)
                 counter = 0;
         }
 
@@ -161,7 +172,7 @@ public class BouncingBalls extends JPanel {
     private void addMultipleBalls(int i) {
         for (int j = 0; j < i; j++) {
             balls.add(new Ball());
-            threadExecutor.execute( balls.get(balls.size() - 1) );
+            threadExecutor.execute(balls.get(balls.size() - 1));
             threads.add(new Thread(balls.get(counter)));
             drawPanel.repaint();
             counter++;
@@ -183,25 +194,14 @@ public class BouncingBalls extends JPanel {
             setPreferredSize(new Dimension(PANEL_WIDTH, PANEL_HEIGHT));
             setBackground(Color.BLUE);
         }
+
         @Override
-        public void paintComponent(Graphics g){
+        public void paintComponent(Graphics g) {
             super.paintComponent(g);
             for (Ball ball : balls) {
                 ball.draw(g);
             }
         }
-    }
-
-    public static void main(String[] args) {
-        BouncingBalls myPanel = new BouncingBalls();
-        JFrame frame = new JFrame("Exercise 1.3 (Bouncing Balls)");
-
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().add(myPanel);
-        frame.pack();
-        frame.setLocationRelativeTo(null);
-        frame.setResizable(false);
-        frame.setVisible(true);
     }
 }
 

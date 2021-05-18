@@ -7,10 +7,10 @@ import java.util.Random;
 /**
  * <h1>Random Obtainable ArrayList</h1>
  *
- * @author  Miguel Emmara - 18022146
+ * @author Miguel Emmara - 18022146
  */
-final class RandomObtainableArrayList<E> extends ArrayList<E> implements RandomObtainable<E>{
-    private Random randomNumber;
+final class RandomObtainableArrayList<E> extends ArrayList<E> implements RandomObtainable<E> {
+    private final Random randomNumber;
 
     public RandomObtainableArrayList() {
         super();
@@ -27,7 +27,7 @@ final class RandomObtainableArrayList<E> extends ArrayList<E> implements RandomO
         boolean isRemove = false;
         int size = this.size();
 
-        if (size != 0){
+        if (size != 0) {
             int number = randomNumber.nextInt(size);
             this.remove(number);
             System.out.println("Element " + ++number + " has been removed!");

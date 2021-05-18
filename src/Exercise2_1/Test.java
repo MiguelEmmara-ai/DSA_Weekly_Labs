@@ -12,22 +12,22 @@ public class Test {
         int n = 1;
 
         while (counter < 1000) {
-            counter +=100;
+            counter += 100;
 
             start = System.nanoTime();
             arraySet.add(n);
             end = System.nanoTime();
-            System.out.println("Add method takes " + (end-start) + " nano seconds\n");
+            System.out.println("Add method takes " + (end - start) + " nano seconds\n");
 
             start = System.nanoTime();
             arraySet.contains(n);
             end = System.nanoTime();
-            System.out.println("Contains method takes " + (end-start) + " nano seconds\n");
+            System.out.println("Contains method takes " + (end - start) + " nano seconds\n");
 
             start = System.nanoTime();
             arraySet.remove(n);
             end = System.nanoTime();
-            System.out.println("Remove method takes " + (end-start) + " nano seconds\n");
+            System.out.println("Remove method takes " + (end - start) + " nano seconds\n");
 
             System.out.println("++++++++++++++++++++++++++++");
             n++;

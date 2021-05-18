@@ -5,7 +5,7 @@ import java.util.Collection;
 /**
  * <h1>Linked Sorted Set</h1>
  *
- * @author  Miguel Emmara - 18022146
+ * @author Miguel Emmara - 18022146
  */
 public class LinkedSortedSet<E extends Comparable<E>> extends LinkedSet<E> {
     public LinkedSortedSet(Collection<? extends E> c) {

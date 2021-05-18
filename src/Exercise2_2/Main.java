@@ -3,7 +3,7 @@ package Exercise2_2;
 /**
  * <h1>Main</h1>
  *
- * @author  Miguel Emmara - 18022146
+ * @author Miguel Emmara - 18022146
  */
 public class Main {
     public static void main(String[] args) {

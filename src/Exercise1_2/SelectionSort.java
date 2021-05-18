@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 /**
  * <h1>Selection Sort</h1>
  *
- * @author  Miguel Emmara - 18022146
+ * @author Miguel Emmara - 18022146
  */
 public class SelectionSort {
     private static final Scanner scanner = new Scanner(System.in);
@@ -23,12 +23,12 @@ public class SelectionSort {
         double startTime = System.currentTimeMillis();
 
         // DSA manual pg 78
-        for(int i = 0; i < numbers.size(); i++) {
+        for (int i = 0; i < numbers.size(); i++) {
             indexMin = i;
 
-            for(int j = i + 1; j < numbers.size(); j++) {
+            for (int j = i + 1; j < numbers.size(); j++) {
                 // If current number in j is smaller, replace the indexMin.
-                if(numbers.get(j) < numbers.get(indexMin)) {
+                if (numbers.get(j) < numbers.get(indexMin)) {
                     indexMin = j;
                 }
                 operations++;
@@ -40,8 +40,8 @@ public class SelectionSort {
             operations = printSorting(numbers, operations);
         }
 
-        System.out.println("\nTime Taken: " + ((System.currentTimeMillis() - startTime)/1000.0) + " seconds");
-        System.out.printf("%s sorted using %d operation%s when n is %d.\n", numbers, operations, (operations > 1? "s":""), numbers.size());
+        System.out.println("\nTime Taken: " + ((System.currentTimeMillis() - startTime) / 1000.0) + " seconds");
+        System.out.printf("%s sorted using %d operation%s when n is %d.\n", numbers, operations, (operations > 1 ? "s" : ""), numbers.size());
 
         scanner.close();
     }
@@ -62,8 +62,7 @@ public class SelectionSort {
 
     private static void scanUser(ArrayList<Integer> numbers) {
         boolean loop;
-        do
-        {
+        do {
             try {
                 prompt();
                 String numberList = SelectionSort.scanner.nextLine();
@@ -76,14 +75,13 @@ public class SelectionSort {
                 }
 
                 loop = true;
-            }
-            catch(NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 loop = false;
                 numbers.removeAll(numbers);
                 prompt();
                 SelectionSort.scanner.nextLine();
             }
-        } while(!loop);
+        } while (!loop);
     }
 
     private static void prompt() {

@@ -3,7 +3,7 @@ package Exercise1_4;
 /**
  * <h1>Implementing An ADT</h1>
  *
- * @author  Miguel Emmara - 18022146
+ * @author Miguel Emmara - 18022146
  */
 public class ImplementingAnADT {
     public static void main(String[] args) {

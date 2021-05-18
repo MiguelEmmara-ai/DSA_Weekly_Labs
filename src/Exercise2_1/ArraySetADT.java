@@ -5,6 +5,8 @@ package Exercise2_1;
  */
 public interface ArraySetADT<E> {
     void add(E item);
+
     void remove(E item);
+
     E contains(E item);
 }

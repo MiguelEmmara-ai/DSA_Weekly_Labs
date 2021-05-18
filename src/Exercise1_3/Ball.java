@@ -6,14 +6,14 @@ import java.util.Random;
 /**
  * <h1>Ball</h1>
  *
- * @author  Miguel Emmara - 18022146
+ * @author Miguel Emmara - 18022146
  */
 public class Ball implements Runnable {
     public final int PANEL_WIDTH = 500;
     public final int PANEL_HEIGHT = 500;
     private int x, y, xMovement, yMovement, ballSize;
     private Color colour;
-    private Random random;
+    private final Random random;
     private boolean stop;
 
     public Ball() {
@@ -23,7 +23,7 @@ public class Ball implements Runnable {
         setY(random.nextInt(getPANEL_HEIGHT() / 2) + getBallSize());
         setxMovement(random.nextInt(20) - 10);
         setyMovement(random.nextInt(20) - 10);
-        setColour(new Color(random.nextInt(255),random.nextInt(255),random.nextInt(255)));
+        setColour(new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255)));
 
     }
 
@@ -85,7 +85,7 @@ public class Ball implements Runnable {
 
     public void draw(Graphics g) {
         g.setColor(this.getColour());
-        g.fillOval(this.getX(), this.getY(), this.getBallSize(),  this.getBallSize());
+        g.fillOval(this.getX(), this.getY(), this.getBallSize(), this.getBallSize());
     }
 
     @Override
@@ -107,14 +107,12 @@ public class Ball implements Runnable {
         this.setY(this.getY() + this.getyMovement());
 
         // Check x and y if they are not outside world bounds, if so....
-        if(this.getX() <=0 || (this.getX() + (this.getBallSize())) >= (this.PANEL_WIDTH - 2))
-        {
-            this.setxMovement(this.getxMovement() * -1);	// Invert movement.
+        if (this.getX() <= 0 || (this.getX() + (this.getBallSize())) >= (this.PANEL_WIDTH - 2)) {
+            this.setxMovement(this.getxMovement() * -1);    // Invert movement.
         }
 
-        if(this.getY() <=0 || (this.getY() + (this.getBallSize())) >= (this.PANEL_HEIGHT - 2))
-        {
-            this.setyMovement(this.getyMovement() * -1);	// Invert movement.
+        if (this.getY() <= 0 || (this.getY() + (this.getBallSize())) >= (this.PANEL_HEIGHT - 2)) {
+            this.setyMovement(this.getyMovement() * -1);    // Invert movement.
         }
     }
 }
