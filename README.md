@@ -13,6 +13,14 @@ AUT Data Structures and Algorithms Weekly Labs Semester 1 2021
    - [Exercise 2.2](https://github.com/MiguelEmmara-ai/DSA_Weekly_Labs/tree/master/src/Exercise2_2)
    - [Exercise 3.1](https://github.com/MiguelEmmara-ai/DSA_Weekly_Labs/tree/master/src/Exercise3_1)
    - [Exercise 3.2](https://github.com/MiguelEmmara-ai/DSA_Weekly_Labs/tree/master/src/Exercise3_2)
+   - [Exercise 3.3](https://github.com/MiguelEmmara-ai/DSA_Weekly_Labs/tree/master/src/Exercise3_3)
+   - [Exercise 3.4](https://github.com/MiguelEmmara-ai/DSA_Weekly_Labs/tree/master/src/Exercise3_4)
+   - [Exercise 3.5](https://github.com/MiguelEmmara-ai/DSA_Weekly_Labs/tree/master/src/Exercise3_5)
+   - [Exercise 3.6](https://github.com/MiguelEmmara-ai/DSA_Weekly_Labs/tree/master/src/Exercise3_6)
+   - [Exercise 4.1](https://github.com/MiguelEmmara-ai/DSA_Weekly_Labs/tree/master/src/Exercise4_1)
+   - [Exercise 4.2](https://github.com/MiguelEmmara-ai/DSA_Weekly_Labs/tree/master/src/Exercise4_2)
+   - [Exercise 4.3](https://github.com/MiguelEmmara-ai/DSA_Weekly_Labs/tree/master/src/Exercise4_3)
+   - [Exercise 4.4](https://github.com/MiguelEmmara-ai/DSA_Weekly_Labs/tree/master/src/Exercise4_4)
     
 
 # License

@@ -4,10 +4,8 @@ package Exercise3_5;
  * A class which includes common algorithms for sorting arrays
  * of Comparable objects in place.
  * Note the elements of the array are presumed to be non-null
- *
+ * <p>
  * Created by Miguel Emmara - 18022146
- *
- *
  */
 public class ArraySorter<E extends Comparable<E>> {
     // driver main method to test one of the algorithms

@@ -11,9 +11,9 @@ import java.util.Random;
 public class Ball implements Runnable {
     public final int PANEL_WIDTH = 500;
     public final int PANEL_HEIGHT = 500;
+    private final Random random;
     private int x, y, xMovement, yMovement, ballSize;
     private Color colour;
-    private final Random random;
     private boolean stop;
 
     public Ball() {

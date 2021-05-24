@@ -9,8 +9,8 @@ import java.util.Random;
 public class TuPac implements Runnable {
     private final Object monitor;
     private final Random gen;
-    public boolean requestStop;
     private final boolean starts;
+    public boolean requestStop;
 
     public TuPac(Object monitor, boolean starts) {   //think of Monitor like a Microphone, only 1 rapper can use it
         this.monitor = monitor;

@@ -14,15 +14,15 @@ import java.util.concurrent.Executors;
 public class BouncingBalls extends JPanel {
     public final int PANEL_WIDTH = 500;
     public final int PANEL_HEIGHT = 500;
+    private final DrawingPanel drawPanel;
+    private final ArrayList<Ball> balls;
+    private final ArrayList<Thread> threads;
+    private final ExecutorService threadExecutor;
     public int counter;
     public JButton addBtn, add10Btn, add100Btn, rmvBtn, rmv10Btn, rmvAllBtn;
     public JButton pause1Btn, resumeBtn;
     public JPanel ballButtonsPanel;
-    private final DrawingPanel drawPanel;
     private Timer timer;
-    private final ArrayList<Ball> balls;
-    private final ArrayList<Thread> threads;
-    private final ExecutorService threadExecutor;
 
     public BouncingBalls() {
         super(new BorderLayout());

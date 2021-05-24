@@ -36,7 +36,7 @@ public class Main {
                 System.out.println("Please Enter a Valid Input!");
                 scanner.nextLine();
             }
-        } while(!stop);
+        } while (!stop);
     }
 
     private static void initiateCounting(int numElements) {

@@ -17,8 +17,8 @@ public class Biggie implements Runnable {
 
     private final Object monitor;
     private final Random gen;
-    public boolean requestStop;
     private final boolean starts;
+    public boolean requestStop;
 
     public Biggie(Object monitor, boolean starts) {   //think of Monitor like a Microphone, only 1 rapper can use it
         this.monitor = monitor;

@@ -42,8 +42,7 @@ public class BinarySearchList {
                 //continue search in right
                 if (dir == 'R') {
 
-                }
-                else {
+                } else {
                     iterator.next();
                 }
                 binarySearch(iterator, length - h, target, 'R');
@@ -55,8 +54,7 @@ public class BinarySearchList {
                 //continue search in left
                 if (dir == 'L') {
 
-                }
-                else {
+                } else {
                     iterator.previous();
                 }
                 binarySearch(iterator, length - h, target, 'L');
@@ -84,7 +82,7 @@ public class BinarySearchList {
                 scanner.nextLine();
                 stop = true;
 
-            } catch(InputMismatchException e) {
+            } catch (InputMismatchException e) {
                 System.out.println("Please Input A Valid Number");
                 scanner.nextLine();
             }

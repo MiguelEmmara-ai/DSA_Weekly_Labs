@@ -81,8 +81,8 @@ public class ResultSetDisplayer extends JPanel {
     }
 
     /**
-     An inner class that is the table data model for an updateable
-     result set from a database query
+     * An inner class that is the table data model for an updateable
+     * result set from a database query
      */
     private class ResultSetTableModel extends AbstractTableModel {
         private final ResultSet rs;

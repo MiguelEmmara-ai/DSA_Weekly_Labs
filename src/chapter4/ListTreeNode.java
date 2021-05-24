@@ -13,9 +13,9 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ListTreeNode<E> implements MutableTreeNode {
+    private final List<MutableTreeNode> children;
     private E element;
     private MutableTreeNode parent;
-    private final List<MutableTreeNode> children;
 
     public ListTreeNode() {
         this(null);

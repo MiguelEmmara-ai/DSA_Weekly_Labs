@@ -11,8 +11,8 @@ import java.util.Random;
 
 public class MoneyMover implements Runnable {
     private final int SUM = 10; // total amount of money
-    private int accountA, accountB; // dollar amounts between 0 and 10
     private final Random generator;
+    private int accountA, accountB; // dollar amounts between 0 and 10
 
     public MoneyMover() {
         accountA = 5;

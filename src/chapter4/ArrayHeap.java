@@ -13,9 +13,9 @@ import java.util.NoSuchElementException;
 
 public class ArrayHeap<E> implements HeapADT<E> {
     private final int INITIAL_CAPACITY = 15; // initial heap height is 3
+    private final Comparator<? super E> comparator;
     private int numElements;
     private E[] elements;
-    private final Comparator<? super E> comparator;
 
     public ArrayHeap() {
         this(null);
