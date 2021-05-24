@@ -1,4 +1,4 @@
-package chapter4;
+package Exercise4_2;
 
 /*
  * A class that implements a sorted set collection using a binary
@@ -382,6 +382,7 @@ public class BinarySearchTree<E> extends AbstractSet<E>
     }
 
     // inner class that represents an Iterator for a binary tree
+    // TODO
     private class BinaryTreeIterator implements Iterator<E> {
         private final LinkedList<E> list;
         private final Iterator<E> iterator;
