@@ -1,12 +1,5 @@
 package chapter7;
 
-/**
- * A class that demonstrates how a JTable can be used to display and
- * edit a ResultSet from a database and updates the database
- *
- * @author Andrew Ensor
- */
-
 import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableModel;
@@ -16,8 +9,15 @@ import java.awt.event.WindowEvent;
 import java.sql.*;
 import java.util.Scanner;
 
+/**
+ * A class that demonstrates how a JTable can be used to display and
+ * edit a ResultSet from a database and updates the database
+ *
+ * @author Andrew Ensor
+ */
+
 public class ResultSetDisplayer extends JPanel {
-    private static final String DRIVER = "com.mysql.jdbc.Driver";
+    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private static final String DB_URL
             = "jdbc:mysql://raptor2:3306/testUnrestricted";
 

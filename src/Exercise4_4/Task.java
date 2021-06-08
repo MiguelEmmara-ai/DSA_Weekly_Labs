@@ -1,12 +1,12 @@
 package Exercise4_4;
 
 import java.util.Comparator;
+import java.util.Scanner;
 
 /**
  * Created by Miguel Emmara - 18022146
  */
 public class Task<E> {
-    // TODO MODIFY A BIT
     private final E element;
     private final int priority;
 
@@ -112,8 +112,8 @@ class PriorityQueue<E> {
 class Driver {
     //main method
     public static void main(String[] args) {
-        //create instance of PriorityQueue
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        Scanner scanner = new Scanner(System.in);
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
 
         Task<Integer> t1 = new Task<>(1, 20);
         Task<Integer> t2 = new Task<>(2, 19);
@@ -122,20 +122,20 @@ class Driver {
         Task<Integer> t5 = new Task<>(5, 10);
 
         //some enqueue operation
-        pq.enqueue(t1);
-        pq.print();
-        pq.enqueue(t2);
-        pq.print();
-        pq.enqueue(t3);
-        pq.print();
-        pq.enqueue(t4);
-        pq.print();
-        pq.enqueue(t5);
-        pq.print();
+        priorityQueue.enqueue(t1);
+        priorityQueue.print();
+        priorityQueue.enqueue(t2);
+        priorityQueue.print();
+        priorityQueue.enqueue(t3);
+        priorityQueue.print();
+        priorityQueue.enqueue(t4);
+        priorityQueue.print();
+        priorityQueue.enqueue(t5);
+        priorityQueue.print();
 
         //delete the minimum
-        Task<Integer> out = pq.dequeueMin();
+        Task<Integer> out = priorityQueue.dequeueMin();
         System.out.println(out.getElement() + " is removed");
-        pq.print();
+        priorityQueue.print();
     }
 }

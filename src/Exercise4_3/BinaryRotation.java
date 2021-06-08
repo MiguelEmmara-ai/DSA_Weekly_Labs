@@ -1,16 +1,17 @@
 package Exercise4_3;
 
+import java.util.InputMismatchException;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Scanner;
 
 /**
  * Created by Miguel Emmara - 18022146
  */
 
 // Java program to flip a binary tree
-class GFG {
+public class BinaryRotation {
 
-    // TODO MODIFY A BIT
     static Node newNode(int data) {
         Node temp = new Node();
         temp.data = data;
@@ -99,11 +100,68 @@ class GFG {
 
     // Driver code
     public static void main(String[] args) {
-        Node root = newNode(1);
+        Scanner scanner = new Scanner(System.in);
+        boolean stop = false;
+        Node root = null;
+
+        while (!stop) {
+            try {
+                System.out.print("Initialize Binary Tree, Input How Many Nodes: ");
+                int n = scanner.nextInt();
+                scanner.nextLine();
+
+                int i = 1;
+                while (i <= n) {
+                    try {
+                        System.out.print("Please Input Node: ");
+                        int node = scanner.nextInt();
+                        scanner.nextLine();
+
+                        if (i > 1) {
+                            System.out.println("\n1. Left");
+                            System.out.println("2. Right");
+                            System.out.println("3. Right Left");
+                            System.out.println("4. Right Right");
+                            System.out.print("\nAnswer: ");
+                            int answer = scanner.nextInt();
+                            scanner.nextLine();
+
+                            switch (answer) {
+                                case 1:
+                                    root.left = newNode(node);
+                                    break;
+                                case 2:
+                                    root.right = newNode(node);
+                                    break;
+                                case 3:
+                                    root.right.left = newNode(node);
+                                    break;
+                                case 4:
+                                    root.right.right = newNode(node);
+                                    break;
+                            }
+                        } else {
+                            root = newNode(node);
+                        }
+
+                        i++;
+                    } catch (InputMismatchException e) {
+                        System.out.println("\nPlease Input A Valid Number!");
+                        scanner.nextLine();
+                    }
+                }
+                stop = true;
+            } catch (InputMismatchException e) {
+                System.out.println("\nPlease Input A Valid Number!");
+                scanner.nextLine();
+            }
+        }
+
+        /*Node root = newNode(1);
         root.left = newNode(2);
         root.right = newNode(3);
         root.right.left = newNode(4);
-        root.right.right = newNode(5);
+        root.right.right = newNode(5);*/
 
         System.out.print("Level order traversal " +
                 "of given tree\n");

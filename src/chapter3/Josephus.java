@@ -2,7 +2,7 @@ package chapter3;
 
 /**
  * Class which demonstrates how a list can be used to solve
- * the Josephus problem. Starting with numPeople soldiers
+ * the data1.Josephus problem. Starting with numPeople soldiers
  * in a circle, every gap-th soldier is removed until
  * there are no soldiers remaining
  *
